@@ -8,11 +8,14 @@ title: Aurinkokunta cooperative
 {% for person in sorted_people %}
   <div class="person">
     {% if person.link %}
-    <h3><a href="{{person.link}}">{{ person.name }}</a></h3>
+      <h3 class="member-name"><a class="member-link" href="{{person.link}}">{{ person.name }}</a></h3>
     {% else %}
-    <h3>{{ person.name }}</h3>
+      <h3 class="member-name">{{ person.name }}</h3>
     {% endif %}
-    <h4>{{ person.short }}</h4>
-    <div>{{ person.content }}</div>
+    <div class="short-description">{{ person.short }}</div>
+    {% if person.email %}
+      <div class="electronic-mail"><a href="mailto:{{ person.email }}">{{ person.email }}</a></div>
+    {% endif %}
+    <!-- <div>{{ person.content }}</div> -->
   </div>
 {% endfor %}
