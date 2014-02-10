@@ -3,14 +3,16 @@ layout: default
 title: Aurinkokunta cooperative
 ---
 
-{% for post in site.posts %}
+{% assign sorted_people = site.posts | sort:"name" %}
+
+{% for person in sorted_people %}
   <div class="person">
-    {% if post.url %}
-    <h3><a href="{{post.url}}">{{ post.name }}</a></h3>
+    {% if person.url %}
+    <h3><a href="{{person.url}}">{{ person.name }}</a></h3>
     {% else %}
-    <h3>{{ post.name }}</h3>
+    <h3>{{ person.name }}</h3>
     {% endif %}
-    <h4>{{ post.short }}</h4>
-    <div>{% include post.html %}</div>
+    <h4>{{ person.short }}</h4>
+    <div>{{ person.html }}</div>
   </div>
 {% endfor %}
