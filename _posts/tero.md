@@ -1,0 +1,5 @@
+---
+name: Tero
+email: terojtakala@gmail.com 
+short: Picture artistry.
+---
